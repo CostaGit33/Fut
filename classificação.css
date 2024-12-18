@@ -1,0 +1,110 @@
+/* ============================ 
+   Estilos para Tabelas Menores e Bordas Arredondadas
+============================ */
+
+/* Variáveis de cores */
+:root {
+  --primary-color: #830909; /* Vermelho */
+  --secondary-color: #000000; /* Preto */
+  --accent-color: #333333; /* Cinza escuro */
+  --text-color: #ffffff; /* Branco */
+  --hover-color: #666666; /* Cinza médio */
+  --background-gradient: linear-gradient(to right, #0000FF, #830909, #000000); /* Fundo padrão */
+  --font-family: "Oswald", sans-serif; /* Fonte esportiva */
+}
+
+/* Estilo global */
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background: var(--background-gradient);
+  color: var(--text-color);
+}
+
+/* Tabelas */
+table {
+  width: 100%; /* Ajusta para ocupar a largura disponível */
+  border-collapse: separate; /* Permite espaçamento entre as células */
+  border-spacing: 0; /* Remove o espaçamento padrão */
+  margin: 15px 0; /* Margem superior e inferior */
+  background-color: var(--secondary-color);
+  border-radius: 15px; /* Bordas arredondadas */
+  overflow: hidden; /* Garante que as bordas arredondadas apareçam */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombras suaves */
+}
+
+/* Cabeçalhos da Tabela */
+th {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem; /* Tamanho menor */
+}
+
+/* Linhas e Células */
+td {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem; /* Tamanho menor para texto */
+  border-top: 1px solid var(--hover-color); /* Linha sutil entre células */
+}
+
+/* Alternância de Cores */
+tr:nth-child(even) {
+  background-color: #3a3a3a; /* Cor para linhas pares */
+}
+
+tr:nth-child(odd) {
+  background-color: #444444; /* Cor para linhas ímpares */
+}
+
+/* Efeito Hover */
+tr:hover {
+  background-color: var(--hover-color); /* Realça a linha */
+  transition: background 0.2s ease-in-out; /* Suaviza o efeito */
+}
+
+/* Estilizando bordas da tabela */
+table tr:first-child th:first-child {
+  border-top-left-radius: 15px; /* Arredonda o canto superior esquerdo */
+}
+
+table tr:first-child th:last-child {
+  border-top-right-radius: 15px; /* Arredonda o canto superior direito */
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 15px; /* Arredonda o canto inferior esquerdo */
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 15px; /* Arredonda o canto inferior direito */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  th,
+  td {
+    padding: 8px;
+    font-size: 0.8rem; /* Reduz tamanho do texto em dispositivos menores */
+  }
+
+  table {
+    border-radius: 10px; /* Bordas levemente menores */
+  }
+}
+
+@media (max-width: 480px) {
+  th,
+  td {
+    padding: 6px;
+    font-size: 0.7rem;
+  }
+
+  table {
+    border-radius: 8px;
+  }
+}

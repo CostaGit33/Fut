@@ -1,0 +1,160 @@
+/* ==========================
+   Estilos Avançados do Modal
+========================== */
+
+/* Modal Container */
+.modal {
+  display: none; /* Inicialmente invisível */
+  position: fixed; /* Fixa na tela */
+  z-index: 1000; /* Alta prioridade */
+  inset: 0; /* Simplificação de left, top, width e height */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)); /* Fundo com gradiente */
+  backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+  overflow: hidden; /* Evita transbordamento */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centraliza o conteúdo */
+  animation: fadeIn 0.4s ease-out; /* Animação de aparição */
+  transition: all 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Fundo com leve gradiente */
+  margin: auto; /* Centraliza horizontalmente */
+  padding: 32px 48px; /* Espaçamento interno mais confortável */
+  width: 80%; /* Largura responsiva */
+  max-width: 650px; /* Largura máxima ligeiramente maior */
+  text-align: center; /* Centraliza o texto */
+  border-radius: 24px; /* Bordas mais suaves */
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3); /* Sombra aprimorada */
+  animation: zoomIn 0.6s cubic-bezier(0.25, 0.8, 0.5, 1); /* Animação mais fluida */
+  overflow: hidden; /* Garante que elementos não transbordem */
+  border: 2px solid rgba(0, 0, 0, 0.1); /* Adiciona um contorno sutil */
+  position: relative; /* Permite adicionar elementos posicionados internamente */
+}
+
+/* Efeito de foco em dispositivos */
+.modal-content:focus-within {
+  outline: 2px solid #4CAF50; /* Indicação clara de foco */
+  outline-offset: 4px; /* Destaque visível */
+}
+
+/* Botão de Fechar (Opcional) */
+.modal-content .close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-content .close-btn:hover {
+  color: #333;
+  transform: scale(1.1);
+}
+
+/* Títulos */
+h1 {
+  font-size: 26px; /* Tamanho do título ajustado */
+  color: #222; /* Cor escura para melhor contraste */
+  margin-bottom: 18px;
+  font-family: "Oswald", sans-serif; /* Fonte esportiva */
+}
+
+/* Texto */
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555; /* Cor suave para o texto */
+  margin-bottom: 22px;
+}
+
+/* Botões do Modal */
+button {
+  padding: 14px 32px; /* Tamanho grande para melhor usabilidade */
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #ff5722, #f44336); /* Gradiente vibrante */
+  color: #fff; /* Texto branco */
+  border: none;
+  border-radius: 10px; /* Bordas arredondadas */
+  transition: background 0.3s ease, transform 0.3s, box-shadow 0.3s; /* Transição mais fluida */
+}
+
+button:hover {
+  background: linear-gradient(90deg, #f44336, #ff5722); /* Gradiente invertido */
+  transform: scale(1.08); /* Aumenta ligeiramente */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra destacada */
+}
+
+button:active {
+  transform: scale(0.95); /* Leve redução ao clicar */
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 20px 25px;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 15px 20px;
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}

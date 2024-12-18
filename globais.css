@@ -1,0 +1,154 @@
+/* ============================
+   Estilos Globais com CSS3
+============================ */
+
+/* Variáveis de cores */
+:root {
+  --primary-color: #830909; /* Vermelho */
+  --secondary-color: #000000; /* Preto */
+  --accent-color: #333333; /* Cinza escuro */
+  --text-color: #ffffff; /* Branco */
+  --hover-color: #444444; /* Cinza médio */
+  --highlight-color: #ffcc00; /* Amarelo para destaque */
+  --gradient-bg: linear-gradient(to right, #0000FF, #830909, #000000); /* Degradê Azul, Vermelho e Preto */
+  --font-family: "Oswald", sans-serif; /* Fonte esportiva */
+}
+
+/* Estilo global do corpo */
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background: var(--gradient-bg);
+  color: var(--text-color);
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  flex-direction: column; /* Organiza os itens em coluna */
+  align-items: center;
+  background: var(--gradient-bg); /* Fundo degradê */
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Ícone do cabeçalho */
+.header-icon {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+/* Botão de menu */
+.menu-button {
+  background: var(--primary-color);
+  color: var(--text-color);
+  font-size: 24px;
+  padding: 5px 0;
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.menu-button:hover {
+  background: var(--hover-color);
+  transform: scale(1.1);
+}
+
+/* Menu suspenso */
+.menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  background: var(--primary-color);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px 20px;
+  min-width: 180px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu.visible {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu a {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 0;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--highlight-color);
+  padding-left: 10px;
+}
+
+/* Navegação */
+nav {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.75rem;
+  background: var(--accent-color);
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav a:hover {
+  background: var(--primary-color);
+  transform: scale(1.1);
+}
+
+/* Botões globais */
+button {
+  background: var(--primary-color);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+button:hover {
+  background: var(--hover-color);
+  transform: scale(1.1);
+}
+
+button:focus {
+  outline: 2px solid var(--highlight-color);
+  outline-offset: 4px;
+}
+
+/* Responsividade para navegação */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}

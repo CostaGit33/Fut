@@ -1,0 +1,240 @@
+/* ============================ 
+   Estilos Globais Unificados com CSS3
+============================ */
+
+/* Variáveis de cores */
+:root {
+  --primary-color: #830909; /* Vermelho */
+  --secondary-color: #000000; /* Preto */
+  --accent-color: #333333; /* Cinza escuro */
+  --text-color: #ffffff; /* Branco */
+  --hover-color: #666666; /* Cinza médio */
+  --background-gradient: linear-gradient(to right, #0000FF, #830909, #000000); /* Fundo padrão */
+  --font-family: "Oswald", sans-serif; /* Fonte esportiva */
+}
+
+/* Estilo global do corpo */
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background: var(--background-gradient);
+  color: var(--text-color);
+}
+
+/* Container principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--background-gradient);
+  animation: fadeIn 1.5s ease-in-out; /* Adiciona um efeito de fade-in */
+}
+
+/* Estilo de caixas (formulários, tabelas) */
+.box {
+  background-color: var(--accent-color);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  width: 95%;
+  max-width: 700px;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  overflow-x: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona transições suaves */
+}
+
+.box:hover {
+  transform: translateY(-5px); /* Eleva a caixa ao passar o mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo para os rótulos */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* Campos de entrada */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 8px var(--primary-color);
+}
+
+/* Botões */
+button {
+  background: linear-gradient(45deg, var(--primary-color), #a40000);
+  color: var(--text-color);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s, box-shadow 0.3s;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-3px); /* Efeito de elevação ao passar o mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+  transform: scale(0.97);
+  box-shadow: none; /* Remove a sombra no clique */
+}
+
+/* Feedbacks */
+.feedback {
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.feedback.success {
+  background-color: #d4edda;
+  color: #155724;
+  border-left: 5px solid #28a745;
+}
+
+.feedback.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left: 5px solid #dc3545;
+}
+
+/* Tabelas */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--secondary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: fadeInUp 1s ease-in-out; /* Adiciona uma animação de entrada */
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #444;
+  color: var(--text-color);
+  transition: background-color 0.3s ease;
+}
+
+th {
+  background-color: var(--primary-color);
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #444;
+}
+
+tr:nth-child(odd) {
+  background-color: #555;
+}
+
+tr:hover {
+  background-color: var(--hover-color);
+  transform: scale(0.98);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Bordas arredondadas específicas para tabelas */
+th:first-child {
+  border-top-left-radius: 12px;
+}
+
+th:last-child {
+  border-top-right-radius: 12px;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  input,
+  button,
+  table {
+    font-size: 1rem;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+}
